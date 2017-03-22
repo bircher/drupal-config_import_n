@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Config Import N module functions.
+ */
+
+use Drupal\Core\Config\ConfigImporter;
+
+/**
+ * Implements hook_config_import_steps_alter().
+ */
+function config_import_n_config_import_steps_alter(&$sync_steps, ConfigImporter $config_importer) {
+  // Add the necessary sync steps.
+  \Drupal::service('config_import_n.sync_batch')->addSyncSteps($sync_steps);
+}

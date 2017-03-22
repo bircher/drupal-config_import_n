@@ -1,0 +1,16 @@
+services:
+  config_import_n.sync_batch:
+    class: Drupal\config_import_n\ConfigSyncBatch
+    arguments: ["@config_import_n.pre_config_import_registry", "@config_import_n.post_config_import_registry", "@logger.channel.config_import_n"]
+  config_import_n.pre_config_import_registry:
+    class: Drupal\config_import_n\PreImportRegistry
+    factory: ['@config_import_n.update_registry_factory', createPreImport]
+  config_import_n.post_config_import_registry:
+    class: Drupal\config_import_n\PostImportRegistry
+    factory: ['@config_import_n.update_registry_factory', createPostImport]
+  config_import_n.update_registry_factory:
+    class: Drupal\config_import_n\UpdateRegistryFactory
+    parent: container.trait
+  logger.channel.config_import_n:
+    parent: logger.channel_base
+    arguments: ['config_import_n']

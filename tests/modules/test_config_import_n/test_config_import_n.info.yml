@@ -1,0 +1,4 @@
+name: TEST Config Import N
+type: module
+core: 8.x
+package: Testing

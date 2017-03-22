@@ -1,0 +1,5 @@
+name: Config Import N
+type: module
+description: 'Config Import N adds a hook_pre_config_import_N and hook_post_config_import_N similar to hook_update_N.'
+core: 8.x
+package: Config
