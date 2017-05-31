@@ -9,7 +9,7 @@ before running the update hooks. But this is a very bad idea and will not be
 possible in the future.
 
 This module introduces two new hooks which should be intuitive to use: 
-`hook_pre_config_import_NAME` and `hook_pre_config_import_NAME`.
+`hook_pre_config_import_NAME` and `hook_post_config_import_NAME`.
 
 The functions are defined in a file called `<module>.pre_config_import.php` and
 `<module>.post_config_import.php` respectively, analogous to `post_update`
